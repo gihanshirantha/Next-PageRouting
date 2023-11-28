@@ -4,6 +4,8 @@ import { ItemCardProps } from "./CartItem.types";
 import { CartContext } from "../../../../context/CartContext";
 import { CartContextProps } from "../../../../context/CartContext.types";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const CartItem: React.FC<ItemCardProps> = ({ item }) => {
   const { id, title, image, price, amount } = item;
@@ -31,7 +33,7 @@ const CartItem: React.FC<ItemCardProps> = ({ item }) => {
                 onClick={() => removeFromCart(id)}
                 className="text-xl cursor-pointer "
               >
-                <i className="fa-solid fa-trash fa-xs "></i>
+                <FontAwesomeIcon icon={faTrash} />
               </div>
             </div>
             <div className="flex gap-s-2 h-[36px] text-sm ">
@@ -40,7 +42,7 @@ const CartItem: React.FC<ItemCardProps> = ({ item }) => {
                   onClick={() => decreaseAmount(id)}
                   className="flex-1 h-full flex justify-center hover:bg-primary-inverse items-center cursor-pointer px-2"
                 >
-                  <i className="fa-solid fa-minus"></i>
+                  <FontAwesomeIcon icon={faMinus} />
                 </div>
                 <div className="h-full flex justify-center items-center px-2">
                   {item.amount}
@@ -49,7 +51,7 @@ const CartItem: React.FC<ItemCardProps> = ({ item }) => {
                   onClick={() => increaseAmount(id)}
                   className="flex-1 h-full flex justify-center hover:bg-primary-inverse items-center cursor-pointer px-2"
                 >
-                  <i className="fa-solid fa-plus"></i>
+                  <FontAwesomeIcon icon={faPlus} />
                 </div>
               </div>
               <div className="flex-1 flex items-center justify-around">
