@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { UserButton, useAuth, useUser } from "@clerk/clerk-react";
+import { SignInButton, UserButton, useAuth, useUser } from "@clerk/clerk-react";
 import {} from "@clerk/clerk-react";
 import { Button, DrawerPortal } from "../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -47,9 +47,9 @@ const Header: React.FC = () => {
       </div>
       <div className="mr-12 flex items-center ">
         {!userId && (
-          <Link href="/sign-in/*">
+          <SignInButton>
             <Button>Login</Button>
-          </Link>
+          </SignInButton>
         )}
         {userId && <p>Hello {user?.firstName}</p>}
 
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
           </DrawerContent>
         </Drawer>
 
-        <UserButton />
+        <UserButton afterSignOutUrl="/" />
       </div>
     </header>
   );

@@ -30,8 +30,8 @@ const HomeTemplate: React.FC<ProductProps> = ({ products, loading, error }) => {
           className="grid grid-cols-1 mt-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-[30px]
 max-w-sm mx-auto md:max-w-none md:mx-0"
         >
-          <Category title="Mens Clothing" link="/mensfashion" />
-          <Category title="Womens Clothing" link="/womensfashion" />
+          <Category title="Mens Clothing" link="/mensFashion" />
+          <Category title="Womens Clothing" link="/womensFashion" />
         </div>
       </SectionLayout>
     </>
