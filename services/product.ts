@@ -1,4 +1,4 @@
-import { Product } from "@/pages/models/Product";
+import { Product } from "@/models/Product";
 
 export async function getStaticProps() {
     const res = await fetch("https://fakestoreapi.com/products");

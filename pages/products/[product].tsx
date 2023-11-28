@@ -1,7 +1,7 @@
 // pages/products/[product].tsx
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-import { Product } from "../models/Product";
+import { Product } from "../../models/Product";
 
 interface ProductPageProps {
   product: Product;
