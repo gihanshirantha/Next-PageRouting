@@ -1,5 +1,5 @@
 import { H1, ProductCard, Loading, Category, H3 } from "../../components";
-import SectionLayout from "../../layouts/SectionLayout/SectionLayout";
+import { SectionLayout } from "../../layouts";
 
 import { ProductProps } from "./HomeTemplate.types";
 

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { ItemCardProps } from "./CartItem.types";
 
-import { CartContext } from "../../../../context/CartContext";
-import { CartContextProps } from "../../../../context/CartContext.types";
+import { CartContext } from "@/context/CartContext";
+import { CartContextProps } from "@/context/CartContext.types";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";

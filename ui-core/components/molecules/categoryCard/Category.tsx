@@ -1,7 +1,7 @@
 import React from "react";
 import { CategoryProps } from "./Category.types";
 import { H1 } from "../../atoms";
-import { Card, CardTitle } from "../../organisms/card/Card.component";
+import { Card, CardTitle } from "../../organisms";
 import Link from "next/link";
 const Category: React.FC<CategoryProps> = ({ title, link }) => {
   return (

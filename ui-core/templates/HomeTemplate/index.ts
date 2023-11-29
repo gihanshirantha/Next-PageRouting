@@ -1,2 +1,2 @@
 export {default as HomeTemplate} from './Home.template'
-export type {ProductProps} from './HomeTemplate.types'
+export type {HomeProductProps} from './HomeTemplate.types'

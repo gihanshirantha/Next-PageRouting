@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { SignInButton, UserButton, useAuth, useUser } from "@clerk/clerk-react";
 import {} from "@clerk/clerk-react";
-import { Button, DrawerPortal } from "../../components";
+import { Button } from "../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Drawer,
@@ -22,8 +22,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "../../components";
-import CartItem from "../../components/organisms/cartItem/CartItem";
-import { useCart } from "../../../context/CartContext";
+import { CartItem } from "../../components";
+import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 

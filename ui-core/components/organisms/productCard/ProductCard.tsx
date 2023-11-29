@@ -7,10 +7,10 @@ import {
   CardTitle,
 } from "../card/Card.component";
 
-import { Button } from "../../atoms/button/Button.component";
+import { Button } from "../../atoms";
 import { useContext } from "react";
-import { CartContext } from "../../../../context/CartContext";
-import { CartContextProps } from "../../../../context/CartContext.types";
+import { CartContext } from "@/context/CartContext";
+import { CartContextProps } from "@/context/CartContext.types";
 import Link from "next/link";
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {

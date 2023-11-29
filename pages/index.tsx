@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import { Product } from "@/models/Product";
-import { HomeTemplate } from "@/ui-core/templates/HomeTemplate";
+import { HomeTemplate } from "@/ui-core";
 
 const inter = Inter({ subsets: ["latin"] });
 
