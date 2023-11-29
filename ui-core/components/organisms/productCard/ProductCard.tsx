@@ -12,11 +12,17 @@ import { useContext } from "react";
 import { CartContext } from "@/context/CartContext";
 import { CartContextProps } from "@/context/CartContext.types";
 import Link from "next/link";
+import classNames from "classnames";
+import { CalssNameProps } from "./ProductCard.types";
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useContext(CartContext) as CartContextProps;
 
   const { id, image, description, title, price, category } = product;
+  const categoryCalssName = classNames("text-center", "rounded-3xl", "p-4", {
+    "bg-mens": category === "men's clothing",
+    "bg-womens": category !== "men's clothing",
+  });
   return (
     <Card>
       <CardHeader>
@@ -32,11 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       </CardHeader>
 
-      <CardContent
-        className={`text-center rounded-3xl p-4 ${
-          category === "men's clothing" ? "bg-mens" : "bg-womens"
-        }`}
-      >
+      <CardContent className={categoryCalssName}>
         <div className="font-bold text-2xl text-[#0E42FD]">$ {price}</div>
         <CardDescription>{description}</CardDescription>
         <Button
