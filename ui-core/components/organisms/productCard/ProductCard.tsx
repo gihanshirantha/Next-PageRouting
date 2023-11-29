@@ -13,7 +13,6 @@ import { CartContext } from "@/context/CartContext";
 import { CartContextProps } from "@/context/CartContext.types";
 import Link from "next/link";
 import classNames from "classnames";
-import { CalssNameProps } from "./ProductCard.types";
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useContext(CartContext) as CartContextProps;
