@@ -6,15 +6,11 @@ import axiosInstance from "@/Services/api.service";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ products, isLoading, error }) {
+export default function Home({ products, error }) {
   return (
     <>
       <div className="pt-24">
-        <HomeTemplate
-          products={products || []}
-          loading={isLoading}
-          error={error}
-        />
+        <HomeTemplate products={products || []} error={error} />
       </div>
     </>
   );
@@ -34,7 +30,6 @@ export async function getServerSideProps() {
     return {
       props: {
         products: filteredProducts,
-        isLoading: false,
         error: null,
       },
     };
@@ -43,7 +38,6 @@ export async function getServerSideProps() {
     return {
       props: {
         products: [],
-        isLoading: false,
         error: "Failed to fetch products",
       },
     };

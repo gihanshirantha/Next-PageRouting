@@ -4,12 +4,11 @@ import { Categorytemplate } from "@/ui-core";
 
 interface Props {}
 
-const MensFashion: React.FC<Props> = ({ products, isLoading, error }) => {
+const MensFashion: React.FC<Props> = ({ products, error }) => {
   return (
     <div className="pt-24">
       <Categorytemplate
         products={products || []}
-        loading={isLoading}
         error={error}
         title="Mens Fashion"
       />
