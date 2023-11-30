@@ -8,14 +8,12 @@ import {
 } from "../card/Card.component";
 
 import { Button } from "../../atoms";
-import { useContext } from "react";
-import { CartContext } from "@/context/CartContext";
-import { CartContextProps } from "@/context/CartContext.types";
+import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import classNames from "classnames";
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { addToCart } = useContext(CartContext) as CartContextProps;
+  const { addToCart } = useCart();
 
   const { id, image, description, title, price, category } = product;
   const categoryCalssName = classNames("text-center", "rounded-3xl", "p-4", {
