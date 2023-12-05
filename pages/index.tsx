@@ -1,16 +1,29 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import Link from "next/link";
+import { Product } from "@/models/Product";
+import { HomeTemplate } from "@/ui-core";
+
+import { getAllProducts } from "@/services/Product/product.service";
+import { QueryClient, dehydrate, useQuery } from "@tanstack/react-query";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ products }) {
+  const { data, error, isLoading } = useQuery<Product[], Error>({
+    queryKey: "products",
+    queryFn: getAllProducts,
+    initialData: products,
+  });
+
   return (
     <>
-      <h1 className="text-3xl font-extrabold text-center p-10">Home Page</h1>
-      <Link href="/blog">Blog</Link>
-      <br />
-      <Link href="/products">products</Link>
+      <div className="pt-24">
+        <HomeTemplate products={data || []} error={error} loading={isLoading} />
+      </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const products = await getAllProducts();
+  return { props: { products } };
 }
