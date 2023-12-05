@@ -1,14 +1,19 @@
-import axiosInstance from "@/Services/api.service";
-import { Product } from "@/models/Product";
+import { getProductsInCategory } from "@/services/Product/product.service";
 import { Categorytemplate } from "@/ui-core";
+import { useQuery } from "@tanstack/react-query";
 
 interface Props {}
 
-const MensFashion: React.FC<Props> = ({ products, isLoading, error }) => {
+const MensFashion: React.FC<Props> = ({ products }) => {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["products", "men's clothing"],
+    queryFn: ({ queryKey }) => getProductsInCategory(queryKey[1]),
+    initialData: products,
+  });
   return (
     <div className="pt-24">
       <Categorytemplate
-        products={products || []}
+        products={data || []}
         loading={isLoading}
         error={error}
         title="Mens Fashion"
@@ -19,26 +24,7 @@ const MensFashion: React.FC<Props> = ({ products, isLoading, error }) => {
 
 export default MensFashion;
 
-export async function getServerSideProps() {
-  try {
-    const res = await axiosInstance.get(`/products/category/men's clothing`);
-    const products: Product[] = res.data;
-
-    return {
-      props: {
-        products: products,
-        isLoading: false,
-        error: null,
-      },
-    };
-  } catch (error) {
-    console.error("Failed to fetch products:", error);
-    return {
-      props: {
-        products: [],
-        isLoading: false,
-        error: "Failed to fetch products",
-      },
-    };
-  }
+export async function getStaticProps() {
+  const products = await getProductsInCategory("men's clothing");
+  return { props: { products } };
 }

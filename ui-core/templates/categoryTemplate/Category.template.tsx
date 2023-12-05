@@ -4,8 +4,8 @@ import { ProductProps } from "./Category.types";
 
 const Categorytemplate: React.FC<ProductProps> = ({
   products,
-  loading,
   error,
+  loading,
   title,
 }) => {
   return (

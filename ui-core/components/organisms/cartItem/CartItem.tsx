@@ -1,17 +1,14 @@
 import React, { useContext } from "react";
 import { ItemCardProps } from "./CartItem.types";
 
-import { CartContext } from "@/context/CartContext";
-import { CartContextProps } from "@/context/CartContext.types";
+import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const CartItem: React.FC<ItemCardProps> = ({ item }) => {
   const { id, title, image, price, amount } = item;
-  const { removeFromCart, increaseAmount, decreaseAmount } = useContext(
-    CartContext
-  ) as CartContextProps;
+  const { removeFromCart, increaseAmount, decreaseAmount } = useCart();
   return (
     <>
       <div className="flexgap-x-4 py-2 lg:px-6 border-b border-gray-200 w-full font-light text-gray-400">

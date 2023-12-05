@@ -2,7 +2,7 @@ import { Product } from "../../../models/Product";
 
 export interface ProductProps{
     products:Product[];
-    loading:boolean;
+    loading?:boolean;
     error:Error|null;
     title:string;
 }
