@@ -1,9 +1,13 @@
 import { H1, ProductCard, Loading, Category, H3 } from "../../components";
 import { SectionLayout } from "../../layouts";
 
-import { ProductProps } from "./HomeTemplate.types";
+import { HomeProductProps } from "./HomeTemplate.types";
 
-const HomeTemplate: React.FC<ProductProps> = ({ products, loading, error }) => {
+const HomeTemplate: React.FC<HomeProductProps> = ({
+  products,
+  loading,
+  error,
+}) => {
   return (
     <>
       <SectionLayout>
