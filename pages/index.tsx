@@ -9,7 +9,7 @@ interface Props {
 
 const Home: React.FC<Props> = ({ products }) => {
   const { data, error, isLoading } = useQuery<Product[], Error>({
-    queryKey: "products",
+    queryKey: ["products"],
     queryFn: getAllProducts,
     initialData: products,
   });
