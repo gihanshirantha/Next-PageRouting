@@ -2,10 +2,8 @@ import { Inter } from "next/font/google";
 import { Product } from "@/models/Product";
 import { HomeTemplate } from "@/ui-core";
 
-import { getAllProducts } from "../services/Product/product.service";
 import { useQuery } from "@tanstack/react-query";
-
-const inter = Inter({ subsets: ["latin"] });
+import { getAllProducts } from "../Services/Product/product.service";
 
 export default function Home({ products }) {
   const { data, error, isLoading } = useQuery<Product[], Error>({

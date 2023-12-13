@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Product } from "../../models/Product";
-import axiosInstance from "../api.service";
 
 export async function getAllProducts() {
   try {

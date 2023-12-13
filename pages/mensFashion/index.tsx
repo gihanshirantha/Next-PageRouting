@@ -1,4 +1,4 @@
-import { getProductsInCategory } from "@/services/Product/product.service";
+import { getProductsInCategory } from "@/Services/Product/product.service";
 import { Categorytemplate } from "@/ui-core";
 import { useQuery } from "@tanstack/react-query";
 
