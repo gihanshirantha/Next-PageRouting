@@ -1,8 +1,11 @@
 import { getProductsInCategory } from "@/Services/Product/product.service";
+import { Product } from "@/models/Product";
 import { Categorytemplate } from "@/ui-core";
 import { useQuery } from "@tanstack/react-query";
 
-interface Props {}
+interface Props {
+  products: Product[];
+}
 
 const MensFashion: React.FC<Props> = ({ products }) => {
   const { data, isLoading, error } = useQuery({

@@ -1,11 +1,13 @@
-import { Inter } from "next/font/google";
 import { Product } from "@/models/Product";
 import { HomeTemplate } from "@/ui-core";
 
 import { useQuery } from "@tanstack/react-query";
-import { getAllProducts } from "../Services/Product/product.service";
+import { getAllProducts } from "@/Services/Product/product.service";
+interface Props {
+  products: Product[];
+}
 
-export default function Home({ products }) {
+const Home: React.FC<Props> = ({ products }) => {
   const { data, error, isLoading } = useQuery<Product[], Error>({
     queryKey: "products",
     queryFn: getAllProducts,
@@ -19,7 +21,8 @@ export default function Home({ products }) {
       </div>
     </>
   );
-}
+};
+export default Home;
 
 export async function getStaticProps() {
   const products = await getAllProducts();
